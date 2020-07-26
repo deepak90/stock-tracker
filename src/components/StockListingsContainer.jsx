@@ -3,14 +3,14 @@ import SearchInput from './SearchInput';
 import StockListings from './StockListings';
 
 const StockListingsContainer = () => {
-	const [matches, setMatches] = useState([]);
+	const [matches, setMatches] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 
 	// fired when search is interacted with
 	const handleChange = event => {
 		const value = event.target.value;
 		if(!value) {
-			setMatches([]);
+			setMatches(false);
 			setSearchTerm('');
 		} else {
 			setSearchTerm(value);
