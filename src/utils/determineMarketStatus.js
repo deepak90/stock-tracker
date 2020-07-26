@@ -5,10 +5,10 @@ export const determineMarketStatus = (date) =>  {
 	const currentHour = dateFromNYTime.getHours();
 	const currentMinute = dateFromNYTime.getMinutes();
 
-	// check if weekend or not inside operating hours (9:30Am to 5:00PM), return closed
+	// check if weekend or not inside operating hours (9:30AM to 5:00PM), return closed
 	if(currentDay === 6 || currentDay === 0) {
 		return 'closed';
-	} else if(((currentHour < 9) || (currentHour == 9 && currentMinute < 30)) || currentHour > 17 ) {
+	} else if(((currentHour < 9) || (currentHour === 9 && currentMinute < 30)) || currentHour > 16 ) {
 		return 'closed'
 	}
 		return 'open';
